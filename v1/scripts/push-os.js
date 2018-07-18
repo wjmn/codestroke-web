@@ -74,7 +74,7 @@ function notiflisten(){
       console.log("Received Notification");
       console.log(data.content);
       console.log(data.data);
-      API.putacknowledge(data.data);
+      API.acknowledge(data.data);
       notiflisten();
     }]);
 }

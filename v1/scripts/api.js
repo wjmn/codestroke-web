@@ -43,15 +43,18 @@ const API = {
         });
     },
 
-    putacknowledge: function(case_id) {
-        alert("test")
+    acknowledge: function(data) {
+        case_id = data.case_id;
         $.ajax({
             url: `${API.address}/acknowledge/${case_id}/`,
             method: "POST",
             contentType: "application/json",
-
+            data: {},
+            success: function(result) {
+                console.log(result)
+            },
             error: function() {
-                console.log('case_id putacknowledge' + case_id);
+                console.log('case_id acknowledge' + case_id);
             }
         });
     },
